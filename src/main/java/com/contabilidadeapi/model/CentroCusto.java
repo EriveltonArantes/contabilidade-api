@@ -1,0 +1,36 @@
+package com.contabilidadeapi.model;
+
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "centrocustos")
+public class CentroCusto {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String nome;
+    @Column(nullable = false)
+    private String codigo;
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String descricao;
+    @Column(nullable = false)
+    private String responsavel;
+    private Boolean ativo;
+
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+
+    public String getNome() { return nome; }
+    public void setNome(String nome) { this.nome = nome; }
+    public String getCodigo() { return codigo; }
+    public void setCodigo(String codigo) { this.codigo = codigo; }
+    public String getDescricao() { return descricao; }
+    public void setDescricao(String descricao) { this.descricao = descricao; }
+    public String getResponsavel() { return responsavel; }
+    public void setResponsavel(String responsavel) { this.responsavel = responsavel; }
+    public Boolean getAtivo() { return ativo; }
+    public void setAtivo(Boolean ativo) { this.ativo = ativo; }
+}
